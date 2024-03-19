@@ -81,7 +81,10 @@ const sendVerificationEmail = (to, link, project) => {
     PASS = process.env.PASS
   }
   const transporter = nodemailer.createTransport({
-    service: "gmail",
+    // service: "gmail",
+    host: 'smtpout.secureserver.net', // GoDaddy's SMTP server
+    port: 465,
+    secure: true,
     auth: {
       user: process.env.EMAIL, // your email address
       pass: process.env.PASS, // your email password
@@ -186,7 +189,10 @@ const sendVerificationCode = (to, code, project) => {
     PASS = process.env.CLEANWASTE_PASS
   }
   const transporter = nodemailer.createTransport({
-    service: "gmail",
+    // service: "gmail",
+    host: 'smtpout.secureserver.net', // GoDaddy's SMTP server
+    port: 465,
+    secure: true,
     auth: {
       user: process.env.EMAIL, // your email address
       pass: process.env.PASS, // your email password
